@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { Root } from './Root';
-import ErrorPage from './ErrorPage';
-import { IdGeneratorPresenter } from '../features/id-generator/presenters/IdGeneratorPresenter';
+import { ErrorPage } from '../pages/ErrorPage';
+import { IdGeneratorPage } from '../pages/IdGeneratorPage';
 
 export const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/id-generator',
-        element: <IdGeneratorPresenter />,
+        element: <IdGeneratorPage />,
       },
     ],
   },
