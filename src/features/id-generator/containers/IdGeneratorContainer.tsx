@@ -10,11 +10,11 @@ export const IdGeneratorContainer = () => {
   const [ids, setIds] = React.useState<ID[]>([]);
 
   const handleGenerateUuid = (): void => {
-    setIds([uuidv4() as UUID]);
+    setIds([...[uuidv4() as UUID, ...ids]]);
   };
 
   const handleGenerateUlid = (): void => {
-    setIds([ulid() as ULID]);
+    setIds([...[ulid() as ULID], ...ids]);
   };
 
   return (
