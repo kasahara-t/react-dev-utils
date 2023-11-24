@@ -15,11 +15,11 @@ const navItems: NavItem[] = [
 
 export const Root = () => {
   return (
-    <div className="flex absolute top-0 right-0 left-0 bottom-0">
-      <div className="w-72 border-r px-6 pt-4 pb-8">
+    <div className="absolute bottom-0 left-0 right-0 top-0 flex">
+      <div className="w-72 border-r px-6 pb-8 pt-4">
         <div>
           <NavLink className="bold" to="/">
-            <span className="truncate font-bold text-xl">React Dev Utils</span>
+            <span className="truncate text-xl font-bold">React Dev Utils</span>
           </NavLink>
         </div>
         <nav className="mt-10">
@@ -34,12 +34,12 @@ export const Root = () => {
           </ul>
         </nav>
       </div>
-      <div className="flex-grow flex relative">
-        <header className="h-14 absolute left-0 right-0 border-b flex justify-center items-center">
+      <div className="relative flex flex-grow">
+        <header className="absolute left-0 right-0 flex h-14 items-center justify-center border-b">
           <span className="font-semibold">header</span>
         </header>
-        <main className="flex-grow mt-14 pt-4 px-8 pb-8">
-          <div className="relative w-full h-full">
+        <main className="mt-14 flex-grow px-8 pb-8 pt-4">
+          <div className="relative h-full w-full">
             <Outlet />
           </div>
         </main>
