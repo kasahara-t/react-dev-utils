@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "composite": true,
+    "rootDir": "../src",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -8,10 +10,10 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    // "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    // "noEmit": true,
     "jsx": "react-jsx",
 
     /* Linting */
@@ -20,6 +22,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["../src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["../src"]
 }

@@ -1,6 +1,10 @@
-import { FC, MouseEvent } from 'react';
+import { FC, ReactNode } from 'react';
 import { ID } from '../models/ID';
-import { Button } from '../../../common/ui/button/Button';
+import { Tab } from '@headlessui/react';
+import { UUIDPanel } from './components/UUIDPanel';
+import { classNames } from '../../../common/utils/utils';
+import { ULIDPanel } from './components/ULIDPanel';
+import { IDHistoryPanel } from './components/IDHistoryPanel';
 
 interface IdGeneratorPresenterProps {
   ids: ID[];
@@ -8,37 +12,59 @@ interface IdGeneratorPresenterProps {
   handleGenerateUlid: () => void;
 }
 
+interface TabInfo {
+  label: string;
+  panel: ReactNode;
+}
+
 export const IdGeneratorPresenter: FC<IdGeneratorPresenterProps> = (props) => {
-  let timeoutId: NodeJS.Timeout;
-  const handleCopy = (id: ID) => (e: MouseEvent) => {
-    clearTimeout(timeoutId);
-    navigator.clipboard.writeText(id);
-    const buttonElement = e.target as HTMLButtonElement;
-    buttonElement.innerText = 'copied!';
-    timeoutId = setTimeout(() => {
-      buttonElement.innerText = 'copy';
-    }, 1000);
-  };
+  const tabs: TabInfo[] = [
+    {
+      label: 'UUID',
+      panel: <UUIDPanel handleGenerateUUID={props.handleGenerateUuid} />,
+    },
+    {
+      label: 'ULID',
+      panel: <ULIDPanel handleGenerateULID={props.handleGenerateUlid} />,
+    },
+  ];
 
   return (
     <article>
-      <div className="tw-flex tw-justify-center tw-gap-x-3">
-        <Button onClick={props.handleGenerateUuid} label="UUID" />
-        <Button onClick={props.handleGenerateUlid} label="ULID" />
-      </div>
-      <div className="tw-mt-3 tw-rounded-lg tw-border tw-p-4">
-        <ul className="tw-flex tw-flex-col tw-gap-y-3">
-          {props.ids.map((id) => (
-            <li
-              className="tw-flex tw-items-center tw-justify-between tw-rounded tw-bg-stone-200 tw-px-5 tw-py-3"
-              key={id}
+      <Tab.Group>
+        <Tab.List className="tw-flex tw-gap-x-1 tw-rounded-lg tw-bg-blue-900/20 tw-p-1">
+          {tabs.map((tab) => (
+            <Tab
+              key={tab.label}
+              className={({ selected }) =>
+                classNames(
+                  'tw-w-full tw-rounded-lg tw-py-2.5 tw-text-sm tw-font-medium tw-leading-5',
+                  'tw-ring-white/60 tw-ring-offset-2 tw-ring-offset-blue-400 tw-focus:outline-none tw-focus:ring-2',
+                  selected
+                    ? 'tw-bg-white tw-text-gray-700 tw-shadow'
+                    : 'tw-text-gray-800/40 tw-hover:bg-white/[0.12] tw-hover:text-white',
+                )
+              }
             >
-              <span>{id}</span>
-              <button onClick={handleCopy(id)}>copy</button>
-            </li>
+              {tab.label}
+            </Tab>
           ))}
-        </ul>
-      </div>
+        </Tab.List>
+        <Tab.Panels className={'tw-mt-3'}>
+          {tabs.map((tab) => (
+            <Tab.Panel
+              key={tab.label}
+              className={classNames(
+                'tw-rounded-xl tw-border tw-p-3',
+                'tw-ring-white/60 tw-ring-offset-2 tw-ring-offset-blue-400 tw-focus:outline-none tw-focus:ring-2',
+              )}
+            >
+              {tab.panel}
+            </Tab.Panel>
+          ))}
+        </Tab.Panels>
+      </Tab.Group>
+      <IDHistoryPanel ids={props.ids} />
     </article>
   );
 };
