@@ -1,5 +1,5 @@
-import React, { FC, MouseEvent } from 'react';
-import { ID } from '../types/ID';
+import { FC, MouseEvent } from 'react';
+import { ID } from '../models/ID';
 import { Button } from '../../../common/ui/button/Button';
 
 interface IdGeneratorPresenterProps {
@@ -21,7 +21,7 @@ export const IdGeneratorPresenter: FC<IdGeneratorPresenterProps> = (props) => {
   };
 
   return (
-    <div>
+    <article>
       <div className="tw-flex tw-justify-center tw-gap-x-3">
         <Button onClick={props.handleGenerateUuid} label="UUID" />
         <Button onClick={props.handleGenerateUlid} label="ULID" />
@@ -39,6 +39,6 @@ export const IdGeneratorPresenter: FC<IdGeneratorPresenterProps> = (props) => {
           ))}
         </ul>
       </div>
-    </div>
+    </article>
   );
 };

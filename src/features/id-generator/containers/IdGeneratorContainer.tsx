@@ -1,9 +1,9 @@
 import { IdGeneratorPresenter } from '../presenters/IdGeneratorPresenter';
 import { ulid } from 'ulid';
 import { v4 as uuidv4 } from 'uuid';
-import { ULID } from '../types/ULID';
-import { ID } from '../types/ID';
-import { UUID } from '../types/UUID';
+import { ULID } from '../models/ULID';
+import { ID } from '../models/ID';
+import { UUID } from '../models/UUID';
 import { useState } from 'react';
 
 export const IdGeneratorContainer = () => {
