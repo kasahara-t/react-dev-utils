@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler, ReactNode } from 'react';
+import { FC, MouseEventHandler } from 'react';
 
 interface ButtonProps {
   label: string;

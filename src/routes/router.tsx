@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { Root } from './Root';
 import { ErrorPage } from '../pages/ErrorPage';
