@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import tailwindcss from 'tailwindcss';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,8 +10,6 @@ export default defineConfig({
     outDir: path.resolve(__dirname, '../docs'),
   },
   css: {
-    postcss: {
-      plugins: [tailwindcss(path.resolve(__dirname, './tailwind.config.js'))],
-    },
+    postcss: path.resolve(__dirname, './postcss.config.js'),
   },
 });

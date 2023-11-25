@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import path from "path";
+import { mergeConfig } from "vite";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -10,10 +12,19 @@ const config: StorybookConfig = {
   ],
   framework: {
     name: "@storybook/react-vite",
-    options: {},
+    options: {
+    },
   },
   docs: {
     autodocs: "tag",
   },
+  viteFinal: async (config) => {
+    const customConfig = {
+      css: {
+        postcss: path.resolve(__dirname, "../config/postcss.config.js"),
+      }
+    };
+    return mergeConfig(config, customConfig);
+  }
 };
 export default config;

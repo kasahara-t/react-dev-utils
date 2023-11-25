@@ -23,8 +23,8 @@ export const IdGeneratorPresenter: FC<IdGeneratorPresenterProps> = (props) => {
   return (
     <div>
       <div className="flex justify-center gap-x-3">
-        <Button onClick={props.handleGenerateUuid}>UUID</Button>
-        <Button onClick={props.handleGenerateUlid}>ULID</Button>
+        <Button onClick={props.handleGenerateUuid} label="UUID" />
+        <Button onClick={props.handleGenerateUlid} label="ULID" />
       </div>
       <div className="mt-3 rounded-lg border p-4">
         <ul className="flex flex-col gap-y-3">
