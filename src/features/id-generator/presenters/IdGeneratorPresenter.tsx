@@ -22,15 +22,15 @@ export const IdGeneratorPresenter: FC<IdGeneratorPresenterProps> = (props) => {
 
   return (
     <div>
-      <div className="flex justify-center gap-x-3">
+      <div className="tw-flex tw-justify-center tw-gap-x-3">
         <Button onClick={props.handleGenerateUuid} label="UUID" />
         <Button onClick={props.handleGenerateUlid} label="ULID" />
       </div>
-      <div className="mt-3 rounded-lg border p-4">
-        <ul className="flex flex-col gap-y-3">
+      <div className="tw-mt-3 tw-rounded-lg tw-border tw-p-4">
+        <ul className="tw-flex tw-flex-col tw-gap-y-3">
           {props.ids.map((id) => (
             <li
-              className="flex items-center justify-between rounded bg-stone-200 px-5 py-3"
+              className="tw-flex tw-items-center tw-justify-between tw-rounded tw-bg-stone-200 tw-px-5 tw-py-3"
               key={id}
             >
               <span>{id}</span>

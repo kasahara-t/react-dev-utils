@@ -8,7 +8,7 @@ interface ButtonProps {
 export const Button: FC<ButtonProps> = ({ label, onClick }) => {
   return (
     <button
-      className={`inline-flex rounded-full border bg-indigo-600 px-6 py-2 font-semibold text-slate-50`}
+      className="tw-inline-flex tw-rounded-full tw-border tw-bg-indigo-600 tw-px-6 tw-py-2 tw-font-semibold tw-text-slate-50"
       onClick={onClick}
     >
       {label}
