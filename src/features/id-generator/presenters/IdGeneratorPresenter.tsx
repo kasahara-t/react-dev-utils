@@ -5,10 +5,11 @@ import { UUIDPanel } from './components/UUIDPanel';
 import { classNames } from '../../../common/utils/utils';
 import { ULIDPanel } from './components/ULIDPanel';
 import { IDHistoryPanel } from './components/IDHistoryPanel';
+import { UUIDGenerateHandler, UUIDType } from '../models/UUID';
 
 interface IdGeneratorPresenterProps {
   ids: ID[];
-  handleGenerateUuid: () => void;
+  handleGenerateUuid: UUIDGenerateHandler;
   handleGenerateUlid: () => void;
 }
 
