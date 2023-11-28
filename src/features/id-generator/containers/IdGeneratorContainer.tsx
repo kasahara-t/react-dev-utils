@@ -9,31 +9,30 @@ import { useState } from 'react';
 export const IdGeneratorContainer = () => {
   const [ids, setIds] = useState<ID[]>([]);
 
-  const handleGenerateUuid = (type: UUIDType, name?: string, namespace?: string) => (): void => {
-    console.log(type, name, namespace);
+  const handleGenerateUuid = (type: UUIDType, name?: string) => (): void => {
     let id: UUID;
     switch (type) {
       case 'v1':
         id = uuidv1();
         break;
       case 'v3':
-        id = uuidv3(name ?? 'defaultValue', namespace ?? uuidv3.DNS);
+        id = uuidv3(name ? name : 'defaultValue', uuidv3.DNS);
         break;
       case 'v4':
         id = uuidv4();
         break;
       case 'v5':
-        id = uuidv5(name ?? 'defaultValue', namespace ?? uuidv5.DNS);
+        id = uuidv5(name ? name : 'defaultValue', uuidv5.DNS);
         break;
       default:
         id = uuidv4();
         break;
     }
-    setIds([...[id, ...ids]]);
+    setIds([...ids, id]);
   };
 
   const handleGenerateUlid = (): void => {
-    setIds([...[ulid() as ULID], ...ids]);
+    setIds([...ids, ulid() as ULID]);
   };
 
   return (

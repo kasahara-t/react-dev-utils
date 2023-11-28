@@ -31,10 +31,10 @@ interface UUIDPanelProps {
 export const UUIDPanel: FC<UUIDPanelProps> = ({ handleGenerateUUID }) => {
   const [formDate, setFormData] = useState<{
     type: UUIDType;
-    name?: string;
-    namespace?: string;
+    name: string;
   }>({
     type: 'v4',
+    name: '',
   });
 
   const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,19 +65,9 @@ export const UUIDPanel: FC<UUIDPanelProps> = ({ handleGenerateUUID }) => {
         <div>
           <label htmlFor="name">Name</label>
           <TextBox type="text" id="name" value={formDate.name} onChange={handleTextChange} />
-          <label htmlFor="namespace">NameSpace</label>
-          <TextBox
-            type="text"
-            id="namespace"
-            value={formDate.namespace}
-            onChange={handleTextChange}
-          />
         </div>
       )}
-      <Button
-        label="Generate"
-        onClick={handleGenerateUUID(formDate.type, formDate.name, formDate.namespace)}
-      />
+      <Button label="Generate" onClick={handleGenerateUUID(formDate.type, formDate.name)} />
     </div>
   );
 };
