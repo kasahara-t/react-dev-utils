@@ -26,7 +26,7 @@ export const Root = () => {
             {navItems.map((item) => (
               <li key={item.to}>
                 <NavLink className="tw-block" to={item.to}>
-                  <span className="tw-truncate tw-font-semibold">{item.label}</span>
+                  <span className="tw-truncate tw-font-bold">{item.label}</span>
                 </NavLink>
               </li>
             ))}
@@ -35,7 +35,7 @@ export const Root = () => {
       </div>
       <div className="tw-relative tw-flex tw-flex-grow">
         <header className="tw-absolute tw-left-0 tw-right-0 tw-flex tw-h-14 tw-items-center tw-justify-center tw-border-b">
-          <span className="tw-font-semibold">header</span>
+          <span className="tw-font-bold">header</span>
         </header>
         <main className="tw-mt-14 tw-flex-grow tw-px-8 tw-pb-8 tw-pt-4">
           <div className="tw-relative tw-h-full tw-w-full">

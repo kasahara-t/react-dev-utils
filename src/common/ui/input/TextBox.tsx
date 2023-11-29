@@ -1,5 +1,6 @@
 import { ChangeEventHandler, FC } from 'react';
 import { classNames } from '../../utils/utils';
+import { Label } from '../layout/Label';
 
 export interface textboxprops {
   value: string;
@@ -11,7 +12,7 @@ export interface textboxprops {
 export const TextBox: FC<textboxprops> = ({ label, ...props }) => {
   return (
     <label>
-      {label && <span className="tw-cursor-pointer">{label}</span>}
+      {label && <Label>{label}</Label>}
       <input
         className={classNames(
           'tw-block tw-w-full tw-rounded-lg tw-border tw-p-2.5 tw-text-sm',
