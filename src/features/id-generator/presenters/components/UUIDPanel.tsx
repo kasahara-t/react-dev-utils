@@ -52,12 +52,15 @@ export const UUIDPanel: FC<UUIDPanelProps> = ({ handleGenerateUUID }) => {
 
   return (
     <div>
-      <label htmlFor="type">Type</label>
-      <ListBox items={UUIDTypeList} defaultValue="v4" onChange={handleUuidTypeChange} />
+      <ListBox
+        items={UUIDTypeList}
+        label="Type"
+        defaultValue="v4"
+        onChange={handleUuidTypeChange}
+      />
       {(formDate.type === 'v3' || formDate.type === 'v5') && (
         <div>
-          <label>Name</label>
-          <TextBox name="name" value={formDate.name} onChange={handleTextChange} />
+          <TextBox name="name" label="Name" value={formDate.name} onChange={handleTextChange} />
         </div>
       )}
       <Button label="Generate" onClick={handleGenerateUUID(formDate.type, formDate.name)} />
