@@ -1,9 +1,13 @@
-import { FC } from 'react';
+import { ChangeEventHandler, FC } from 'react';
 import { classNames } from '../../utils/utils';
 
-export interface TextBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface TextBoxProps {
+  value: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  name?: string;
+}
 
-export const TextBox: FC<TextBoxProps> = ({ className, ...props }) => {
+export const TextBox: FC<TextBoxProps> = (props) => {
   return (
     <input
       className={classNames(
@@ -13,7 +17,6 @@ export const TextBox: FC<TextBoxProps> = ({ className, ...props }) => {
         // 'dark:tw-border-gray-600 dark:tw-bg-gray-700 dark:tw-text-white dark:tw-placeholder-gray-400',
         // 'dark:focus:tw-border-blue-500 dark:focus:tw-ring-blue-500',
         // 'dark:tw-text-white',
-        className ?? '',
       )}
       {...props}
     />

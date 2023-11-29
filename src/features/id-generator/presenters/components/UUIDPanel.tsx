@@ -1,28 +1,27 @@
 import { FC, useState } from 'react';
 import { Button } from '../../../../common/ui/button/Button';
 import { UUIDGenerateHandler, UUIDType } from '../../models/UUID';
-import { Select } from '../../../../common/ui/select/Select';
 import { TextBox } from '../../../../common/ui/input/TextBox';
-import { type } from 'os';
+import { ListBox, ListBoxItem } from '../../../../common/ui/input/ListBox';
 
-const UUIDTypeList: {
-  [key in UUIDType]: {
-    label: string;
-  };
-} = {
-  v1: {
+const UUIDTypeList: ListBoxItem[] = [
+  {
     label: 'Version 1',
+    value: 'v1',
   },
-  v3: {
+  {
     label: 'Version 3',
+    value: 'v3',
   },
-  v4: {
+  {
     label: 'Version 4',
+    value: 'v4',
   },
-  v5: {
+  {
     label: 'Version 5',
+    value: 'v5',
   },
-};
+];
 
 interface UUIDPanelProps {
   handleGenerateUUID: UUIDGenerateHandler;
@@ -40,31 +39,25 @@ export const UUIDPanel: FC<UUIDPanelProps> = ({ handleGenerateUUID }) => {
   const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formDate,
-      [event.target.id]: event.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
-  const handleUuidTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleUuidTypeChange = (value: string) => {
     setFormData({
       ...formDate,
-      type: event.target.value as UUIDType,
+      type: value as UUIDType,
     });
   };
 
   return (
     <div>
       <label htmlFor="type">Type</label>
-      <Select id="type" onChange={handleUuidTypeChange} value={formDate.type}>
-        {Object.entries(UUIDTypeList).map(([key, value]) => (
-          <option key={key} value={key}>
-            {value.label}
-          </option>
-        ))}
-      </Select>
+      <ListBox items={UUIDTypeList} defaultValue="v4" onChange={handleUuidTypeChange} />
       {(formDate.type === 'v3' || formDate.type === 'v5') && (
         <div>
-          <label htmlFor="name">Name</label>
-          <TextBox type="text" id="name" value={formDate.name} onChange={handleTextChange} />
+          <label>Name</label>
+          <TextBox name="name" value={formDate.name} onChange={handleTextChange} />
         </div>
       )}
       <Button label="Generate" onClick={handleGenerateUUID(formDate.type, formDate.name)} />
