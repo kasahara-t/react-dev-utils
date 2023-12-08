@@ -1,3 +1,5 @@
+import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   prefix: 'tw-',
@@ -5,5 +7,9 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    iconsPlugin({
+      collections: getIconCollections(['material-symbols']),
+    }),
+  ],
 };

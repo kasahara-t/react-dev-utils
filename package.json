@@ -19,6 +19,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@egoist/tailwindcss-icons": "^1.4.0",
+    "@iconify/json": "^2.2.154",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
