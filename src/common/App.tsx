@@ -1,7 +1,11 @@
-import { RouterProvider } from 'react-router-dom';
-import { routes } from './router/routes';
 import './styles/global.scss';
+import { ThemeProvider } from './providers/theme/ThemeProvider';
+import { RouterProvider } from './providers/router/RouterProvider';
 
 export const App = () => {
-  return <RouterProvider router={routes} />;
+  return (
+    <ThemeProvider>
+      <RouterProvider />
+    </ThemeProvider>
+  );
 };

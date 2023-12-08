@@ -4,6 +4,7 @@ import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons';
 export default {
   prefix: 'tw-',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {},
   },
