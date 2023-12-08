@@ -16,7 +16,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (e: MediaQueryListEvent) => {
       const newTheme = e.matches ? 'dark' : 'light';
-      console.log(`OS theme changed to ${newTheme}`);
+      console.debug(`OS theme changed to ${newTheme}`);
       setTheme(newTheme);
     };
     mediaQuery.addEventListener('change', handleChange);
