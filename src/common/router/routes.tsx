@@ -2,11 +2,12 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { Root } from '../ui/layout/Root';
 import { ErrorPage } from '../ui/page/ErrorPage';
 import { IdGeneratorContainer } from '../../features/id-generator';
+import { FloatLayout } from '../ui/layout/FloatLayout';
 
 export const routes = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    element: <FloatLayout />,
     errorElement: <ErrorPage />,
     children: [
       {
