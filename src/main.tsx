@@ -1,4 +1,4 @@
-import { App } from './App';
+import { App } from './common/App';
 import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
 
