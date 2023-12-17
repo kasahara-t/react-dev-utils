@@ -10,7 +10,7 @@ export default {
   },
   plugins: [
     iconsPlugin({
-      collections: getIconCollections(['material-symbols']),
+      collections: getIconCollections(['material-symbols', 'mdi']),
     }),
   ],
 };
