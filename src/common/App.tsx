@@ -1,11 +1,14 @@
 import './styles/global.scss';
 import { ThemeProvider } from './providers/theme/ThemeProvider';
 import { RouterProvider } from './providers/router/RouterProvider';
+import { RecoilRoot } from 'recoil';
 
 export const App = () => {
   return (
-    <ThemeProvider>
-      <RouterProvider />
-    </ThemeProvider>
+    <RecoilRoot>
+      <ThemeProvider>
+        <RouterProvider />
+      </ThemeProvider>
+    </RecoilRoot>
   );
 };
