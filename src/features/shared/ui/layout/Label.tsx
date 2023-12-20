@@ -1,5 +1,5 @@
+import { classNames } from '@common/utils/utils';
 import { FC, ReactNode } from 'react';
-import { classNames } from '../../utils/utils';
 
 export interface LabelProps {
   children: ReactNode;

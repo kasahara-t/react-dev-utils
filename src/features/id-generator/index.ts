@@ -1,1 +1,1 @@
-export { IdGeneratorContainer } from './containers/IdGeneratorContainer';
+export { IdGeneratorContainer } from './components/IdGeneratorContainer';

@@ -1,4 +1,4 @@
-import { IdGeneratorPresenter } from '../presenters/IdGeneratorPresenter';
+import { IdGeneratorPresenter } from './IdGeneratorPresenter';
 import { ulid } from 'ulid';
 import { v4 as uuidv4, v1 as uuidv1, v3 as uuidv3, v5 as uuidv5 } from 'uuid';
 import { ULID } from '../models/ULID';

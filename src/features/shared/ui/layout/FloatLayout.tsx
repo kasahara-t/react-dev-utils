@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { classNames } from '../../utils/utils';
 import { Outlet } from 'react-router-dom';
 import { ThemeToggleButton } from '../button/ThemeToggleButton';
+import { classNames } from '@common/utils/utils';
 
 export const FloatLayout = () => {
   const [isNaviOpen, setIsNaviOpen] = useState<boolean>(false);

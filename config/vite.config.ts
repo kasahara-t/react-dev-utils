@@ -15,4 +15,12 @@ export default defineConfig({
   esbuild: {
     drop: ['console', 'debugger'],
   },
+  resolve: {
+    alias: {
+      '@app': path.resolve(__dirname, '../src/app/'),
+      '@common': path.resolve(__dirname, '../src/common/'),
+      '@features': path.resolve(__dirname, '../src/features/'),
+      '@lib': path.resolve(__dirname, '../src/lib/'),
+    },
+  },
 });

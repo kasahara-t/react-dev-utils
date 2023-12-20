@@ -1,7 +1,7 @@
+import { classNames } from '@common/utils/utils';
 import { FC, MouseEventHandler } from 'react';
-import { classNames } from '../../utils/utils';
 
-interface ButtonProps {
+export interface ButtonProps {
   label: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }

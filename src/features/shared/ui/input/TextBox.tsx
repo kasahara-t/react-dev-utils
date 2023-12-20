@@ -1,6 +1,6 @@
 import { ChangeEventHandler, FC } from 'react';
-import { classNames } from '../../utils/utils';
 import { Label } from '../layout/Label';
+import { classNames } from '@common/utils/utils';
 
 export interface textboxprops {
   value: string;

@@ -1,5 +1,5 @@
 import { FC, MouseEvent } from 'react';
-import { ID } from '../../models/ID';
+import { ID } from '../models/ID';
 
 interface IDHistoryProps {
   id: ID;

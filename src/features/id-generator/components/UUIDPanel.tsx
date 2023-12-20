@@ -1,8 +1,8 @@
+import { ListBox, ListBoxItem } from '@features/shared/ui/input/ListBox';
 import { FC, useState } from 'react';
-import { Button } from '../../../../common/ui/button/Button';
-import { UUIDGenerateHandler, UUIDType } from '../../models/UUID';
-import { TextBox } from '../../../../common/ui/input/TextBox';
-import { ListBox, ListBoxItem } from '../../../../common/ui/input/ListBox';
+import { UUIDGenerateHandler, UUIDType } from '../models/UUID';
+import { TextBox } from '@features/shared/ui/input/TextBox';
+import { Button } from '@features/shared/ui/button/Button';
 
 const UUIDTypeList: ListBoxItem[] = [
   {

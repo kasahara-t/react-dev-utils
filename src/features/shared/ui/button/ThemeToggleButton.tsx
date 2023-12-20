@@ -1,19 +1,12 @@
-import { FC, useContext } from 'react';
-import { ThemeContext } from '../../providers/theme/themeContext';
-import { classNames } from '../../utils/utils';
+import { classNames } from '@common/utils/utils';
+import { FC, useState } from 'react';
 
 export interface ThemeToggleButtonProps {
   className?: string;
 }
 
 export const ThemeToggleButton: FC<ThemeToggleButtonProps> = ({ className }) => {
-  const context = useContext(ThemeContext);
-
-  if (!context) {
-    throw new Error('ThemeToggleButton must be used within a ThemeProvider');
-  }
-
-  const { theme, setTheme } = context;
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const handleToggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';

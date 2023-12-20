@@ -1,15 +1,14 @@
-import { StoryObj } from "@storybook/react";
-import { Button } from "./Button";
+import { StoryObj } from '@storybook/react';
+import { Button } from './Button';
 
 const meta = {
   title: 'Common/Button',
   component: Button,
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-  }
+  argTypes: {},
 };
 
 export default meta;
@@ -18,6 +17,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     label: 'Button',
-    onClick: () => alert('Clicked!')
-  }
+    onClick: () => alert('Clicked!'),
+  },
 };
