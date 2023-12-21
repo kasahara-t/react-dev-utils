@@ -1,11 +1,11 @@
 import { FC, ReactNode } from 'react';
-import { ID } from '../models/ID';
 import { Tab } from '@headlessui/react';
-import { UUIDGenerateHandler } from '../models/UUID';
-import { UUIDPanel } from './UUIDPanel';
-import { ULIDPanel } from './ULIDPanel';
 import { classNames } from '@common/utils/utils';
+import { ID } from '../models/ID';
+import { UUIDGenerateHandler } from '../models/UUID';
 import { IDHistoryPanel } from './IDHistoryPanel';
+import { ULIDPanel } from './ULIDPanel';
+import { UUIDPanel } from './UUIDPanel';
 
 interface IdGeneratorPresenterProps {
   ids: ID[];

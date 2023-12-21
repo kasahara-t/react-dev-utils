@@ -1,4 +1,13 @@
 printWidth: 100
 singleQuote: true
+importOrder:
+  - ^(react/(.*)$)|^(react$)
+  - <THIRD_PARTY_MODULES>
+  - '^@app/(.*)$'
+  - '@common/(.*)$'
+  - '@lib/(.*)$'
+  - '@features/(.*)$'
+  - ^[./]
 plugins:
   - prettier-plugin-tailwindcss
+  - '@trivago/prettier-plugin-sort-imports'

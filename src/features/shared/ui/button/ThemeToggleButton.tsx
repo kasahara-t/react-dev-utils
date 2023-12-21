@@ -1,5 +1,5 @@
-import { classNames } from '@common/utils/utils';
 import { FC, useState } from 'react';
+import { classNames } from '@common/utils/utils';
 
 export interface ThemeToggleButtonProps {
   className?: string;

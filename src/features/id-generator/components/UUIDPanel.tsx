@@ -1,10 +1,9 @@
-import { ListBox, ListBoxItem } from '@features/shared/ui/input/ListBox';
 import { FC, useState } from 'react';
-import { UUIDGenerateHandler, UUIDType } from '../models/UUID';
-import { TextBox } from '@features/shared/ui/input/TextBox';
-import { Button } from '@features/shared/ui/button/Button';
 import { useTranslation } from 'react-i18next';
-import '@lib/i18n/setting';
+import { Button } from '@features/shared/ui/button/Button';
+import { ListBox, ListBoxItem } from '@features/shared/ui/input/ListBox';
+import { TextBox } from '@features/shared/ui/input/TextBox';
+import { UUIDGenerateHandler, UUIDType } from '../models/UUID';
 
 const UUIDTypeList: ListBoxItem[] = [
   {

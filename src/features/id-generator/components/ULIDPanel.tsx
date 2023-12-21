@@ -1,5 +1,5 @@
-import { Button } from '@features/shared/ui/button/Button';
 import { FC } from 'react';
+import { Button } from '@features/shared/ui/button/Button';
 
 interface ULIDPanelProps {
   handleGenerateULID: () => void;

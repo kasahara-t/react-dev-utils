@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { IDHistory } from './IDHistory';
 import { ID } from '../models/ID';
+import { IDHistory } from './IDHistory';
 
 interface IDHistoryPanelProps {
   ids: ID[];

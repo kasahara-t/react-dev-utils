@@ -1,7 +1,7 @@
 import i18next from 'i18next';
-import { ja } from './resources/ja';
-import { en } from './resources/en';
 import { initReactI18next } from 'react-i18next';
+import { en } from './resources/en';
+import { ja } from './resources/ja';
 
 export const defaultNS = 'translation';
 export const resources = {

@@ -1,7 +1,7 @@
 import { RouterProvider } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-import { routes } from './routes';
 import './global.scss';
+import { routes } from './routes';
 
 export const App = () => {
   return (

@@ -1,7 +1,7 @@
-import { Listbox } from '@headlessui/react';
 import { FC, useState } from 'react';
-import { Label } from '../layout/Label';
+import { Listbox } from '@headlessui/react';
 import { classNames } from '@common/utils/utils';
+import { Label } from '../layout/Label';
 
 export interface ListBoxItem {
   label: string;

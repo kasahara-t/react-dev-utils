@@ -1,5 +1,5 @@
-import { classNames } from '@common/utils/utils';
 import { FC, MouseEventHandler } from 'react';
+import { classNames } from '@common/utils/utils';
 
 export interface ButtonProps {
   label: string;
