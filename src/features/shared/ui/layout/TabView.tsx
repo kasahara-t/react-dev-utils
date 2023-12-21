@@ -16,7 +16,12 @@ export const TabView: FC<TabViewProps> = ({ tabs }) => {
     <Tab.Group>
       <Tab.List className={classNames('tw-flex tw-w-full tw-border-b')}>
         {tabs.map((tab) => (
-          <Tab key={tab.label} className={({ selected }) => classNames('tw-h-12 tw-flex-1')}>
+          <Tab
+            key={tab.label}
+            className={({ selected }) =>
+              classNames('tw-h-12 tw-flex-1', selected ? 'tw-text-primary-900 tw-font-bold' : '')
+            }
+          >
             {tab.label}
           </Tab>
         ))}
