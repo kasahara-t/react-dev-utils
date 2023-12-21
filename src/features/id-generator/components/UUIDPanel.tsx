@@ -3,6 +3,8 @@ import { FC, useState } from 'react';
 import { UUIDGenerateHandler, UUIDType } from '../models/UUID';
 import { TextBox } from '@features/shared/ui/input/TextBox';
 import { Button } from '@features/shared/ui/button/Button';
+import { useTranslation } from 'react-i18next';
+import '@lib/i18n/setting';
 
 const UUIDTypeList: ListBoxItem[] = [
   {
@@ -35,6 +37,7 @@ export const UUIDPanel: FC<UUIDPanelProps> = ({ handleGenerateUUID }) => {
     type: 'v4',
     name: '',
   });
+  const { t } = useTranslation();
 
   const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -63,7 +66,10 @@ export const UUIDPanel: FC<UUIDPanelProps> = ({ handleGenerateUUID }) => {
           <TextBox name="name" label="Name" value={formDate.name} onChange={handleTextChange} />
         </div>
       )}
-      <Button label="Generate" onClick={handleGenerateUUID(formDate.type, formDate.name)} />
+      <Button
+        label={t('idGenerator.generate')}
+        onClick={handleGenerateUUID(formDate.type, formDate.name)}
+      />
     </div>
   );
 };

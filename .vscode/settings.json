@@ -10,5 +10,6 @@
   "prettier.configPath": "config/.prettierrc.yaml",
   "eslint.options": {
     "overrideConfigFile": "config/.eslintrc.cjs"
-  }
+  },
+  "conventionalCommits.scopes": ["i18nextの設定処理を追加"]
 }
