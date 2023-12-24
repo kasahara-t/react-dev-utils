@@ -1,7 +1,7 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { FloatLayout } from '@features/shared/ui/layout/FloatLayout';
 import { ErrorPage } from './pages/ErrorPage';
-import { IdGenerator } from './pages/IdGenerator';
+import { IdGeneratorPage } from './pages/IdGeneratorPage';
 
 export const routes = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/id-generator',
-        element: <IdGenerator />,
+        element: <IdGeneratorPage />,
       },
     ],
   },

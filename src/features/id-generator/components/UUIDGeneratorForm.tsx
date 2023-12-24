@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@features/shared/ui/button/Button';
 import { ListBox, ListBoxItem } from '@features/shared/ui/input/ListBox';
 import { TextBox } from '@features/shared/ui/input/TextBox';
-import { UUIDGenerateHandler, UUIDType } from '../models/UUID';
+import { useIdState } from '../logic/idState';
+import { generateUUID } from '../logic/uuidLogic';
+import { UUIDType } from '../models/UUID';
 
 const UUIDTypeList: ListBoxItem[] = [
   {
@@ -24,18 +26,19 @@ const UUIDTypeList: ListBoxItem[] = [
   },
 ];
 
-interface UUIDPanelProps {
-  handleGenerateUUID: UUIDGenerateHandler;
+interface UUIDGeneratorFormData {
+  type: UUIDType;
+  name: string;
 }
 
-export const UUIDPanel: FC<UUIDPanelProps> = ({ handleGenerateUUID }) => {
-  const [formDate, setFormData] = useState<{
-    type: UUIDType;
-    name: string;
-  }>({
-    type: 'v4',
-    name: '',
-  });
+const defaultFormData: UUIDGeneratorFormData = {
+  type: 'v4',
+  name: '',
+};
+
+export const UUIDGeneratorForm: FC = () => {
+  const [formDate, setFormData] = useState<UUIDGeneratorFormData>(defaultFormData);
+  const { addId } = useIdState();
   const { t } = useTranslation();
 
   const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,8 +55,13 @@ export const UUIDPanel: FC<UUIDPanelProps> = ({ handleGenerateUUID }) => {
     });
   };
 
+  const handleClick = () => {
+    const uuid = generateUUID(formDate.type, { name: formDate.name });
+    addId(uuid);
+  };
+
   return (
-    <div>
+    <form>
       <ListBox
         items={UUIDTypeList}
         label="Type"
@@ -65,10 +73,7 @@ export const UUIDPanel: FC<UUIDPanelProps> = ({ handleGenerateUUID }) => {
           <TextBox name="name" label="Name" value={formDate.name} onChange={handleTextChange} />
         </div>
       )}
-      <Button
-        label={t('idGenerator.generate')}
-        onClick={handleGenerateUUID(formDate.type, formDate.name)}
-      />
-    </div>
+      <Button label={t('idGenerator.generate')} type="button" onClick={handleClick} />
+    </form>
   );
 };

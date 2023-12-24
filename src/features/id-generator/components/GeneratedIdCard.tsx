@@ -1,11 +1,11 @@
 import { FC, MouseEvent } from 'react';
 import { ID } from '../models/ID';
 
-interface IDHistoryProps {
+export interface GeneratedIdCardProps {
   id: ID;
 }
 
-export const IDHistory: FC<IDHistoryProps> = ({ id }) => {
+export const GeneratedIdCard: FC<GeneratedIdCardProps> = ({ id }) => {
   let timeoutId: NodeJS.Timeout;
   const handleCopy = (id: ID) => (e: MouseEvent) => {
     clearTimeout(timeoutId);
