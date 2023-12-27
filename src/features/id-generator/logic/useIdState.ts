@@ -1,10 +1,13 @@
 import { atom, useRecoilState } from 'recoil';
-import { RecoilKeys } from '@lib/recoil/recoilKeys';
+import { RecoilKeys } from '@lib/recoil/RecoilKeys';
 import { ID } from '../models/ID';
+import { localStorageEffect } from '@lib/recoil/localStrageEffect';
 
+const idStateKey = RecoilKeys.ID;
 const idState = atom<ID[]>({
-  key: RecoilKeys.ID,
+  key: idStateKey,
   default: [],
+  effects: [localStorageEffect(idStateKey)],
 });
 
 export const useIdState = () => {

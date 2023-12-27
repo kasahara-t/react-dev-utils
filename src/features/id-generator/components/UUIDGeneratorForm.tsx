@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@features/shared/ui/button/Button';
 import { ListBox, ListBoxItem } from '@features/shared/ui/input/ListBox';
 import { TextBox } from '@features/shared/ui/input/TextBox';
-import { useIdState } from '../logic/idState';
+import { useIdState } from '../logic/useIdState';
 import { generateUUID } from '../logic/uuidLogic';
 import { UUIDType } from '../models/UUID';
 

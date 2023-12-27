@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useIdState } from '../logic/idState';
+import { useIdState } from '../logic/useIdState';
 import { GeneratedIdCard } from './GeneratedIdCard';
 
 export const IdHistoryList: FC = () => {
