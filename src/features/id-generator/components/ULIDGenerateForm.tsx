@@ -15,7 +15,7 @@ export const ULIDGeneratorForm: FC = () => {
 
   return (
     <div>
-      <Button label={t('idGenerator.generate')} type="button" onClick={handleClick} />
+      <Button label={t('idGenerator.generateId')} type="button" onClick={handleClick} />
     </div>
   );
 };

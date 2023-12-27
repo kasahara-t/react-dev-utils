@@ -73,7 +73,7 @@ export const UUIDGeneratorForm: FC = () => {
           <TextBox name="name" label="Name" value={formDate.name} onChange={handleTextChange} />
         </div>
       )}
-      <Button label={t('idGenerator.generate')} type="button" onClick={handleClick} />
+      <Button label={t('idGenerator.generateId')} type="button" onClick={handleClick} />
     </form>
   );
 };
